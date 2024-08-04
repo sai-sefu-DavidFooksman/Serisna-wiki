@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serisna Wiki Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            padding-bottom: 60px; /* フッターの高さ分だけ下に余白を追加 */
+            box-sizing: border-box; /* ボックスモデルを設定 */
+        }
+        header {
+            background-image: url('./img/blue-sky.jpg'); /* 青空の画像のURL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            nav a {
+                float: none;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        caption {
+            font-size: 1.5em;
+            margin: 10px;
+        }
+        /* モーダルウィンドウのスタイル */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+  
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            box-sizing: border-box; /* ボックスモデルを設定 */
+        }
+  
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+  
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+  
+        /* バナー広告のスタイル */
+        .banner {
+            background-image: url('./img/golden-sky.jpg'); /* 黄金の雲の画像のURL */
+            background-size: cover;
+            background-position: center;
+            color: #333; /* 文字色を濃い色に設定 */
+            padding: 30px; /* 縦幅を広げる */
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%; /* 幅を100%に設定 */
+            max-width: 960px; /* 最大幅を指定（任意） */
+            margin: 10px auto; /* 上下のマージン */
+            text-align: center;
+            font-size: 1.2em; /* 文字サイズの調整 */
+            font-weight: bold; /* 文字の太さ */
+            box-sizing: border-box; /* ボックスモデルを設定 */
+        }
+  
+        .banner:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <h1>Serisna Wiki</h1>
+    </header>
+
+    <!-- バナー広告 -->
+    <div class="banner" id="banner">
+      セリスナ教信者へのおしらせ
+    </div>
+
+    <!-- モーダルウィンドウ -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            <h2>セリスナ教信者の活動の推奨</h2>
+            <p>現代の情報社会において、SNSの発展により価値観が迅速に広まり、自身の意思決定に大きな影響を与えることがあります。この状況では、他者の価値観によって自己の価値観が根本から揺さぶられ、意思決定に対する自信を失ったり、人間不信や他者に対する激しい憎悪が生じることもあります。このような問題に対処するために、セリスナ教では以下の活動を推奨しています。</p>
+            <h3>1. 聖書の翻訳</h3>
+            <p>セリスナ教の聖書であるセリスナ書は、極めて少ない語彙で構成される抽象言語、セリスナ語で書かれています。この抽象的な言語は、個人の内面と向き合うための強力なツールです。信者の皆さんには、セリスナ書の翻訳作業を通じて、言語の持つ力を深く理解し、自身の感情や思考をより明確にする手助けをしていただきたいと考えています。翻訳作業を行うことで、セリスナ語の美しさとその抽象性を実感し、宇宙の真理に一層アクセスすることができるでしょう。</p>
+            <h3>2. セリスナ語での文章作成</h3>
+            <p>セリスナ語は、その抽象的な特性によって、感情や思考を深く掘り下げるための優れた手段です。自分自身の感情を言語化し、具体化することは、内面的な平和を追求する上で重要なプロセスです。信者の皆さんには、自身の感情や思想をセリスナ語で表現することを推奨します。セリスナ語を使って文章を書くことにより、抽象的な感情をより豊かに、かつ矛盾なく表現することができるでしょう。また、セリスナ語は多解釈的であり、そのため全体として理屈が通っているかを検証する必要が少なく、自分自身の気持ちを自由に表現することができます。</p>
+            <p>セリスナ教は、言語が持つ力とその抽象性を通じて、個人の内面と向き合う新たな道を提供します。信者の皆さんには、セリスナ語を用いて自己表現を深め、宇宙の真理にアクセスすることで、内なる平和を追求していただきたいと願っています。この新たな言語を通じて、感情の具体化と自己の表現における新しい可能性を探求してください。</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">ホーム</a>
+        <a href="./bible/index.html" target="_blank">聖書</a>
+        <a href="#vocabulary">セリスナ語彙</a>
+        <a href="./news/index.html" target="_blank">ニュース</a>
+    </nav>
+
+    <div class="container">
+      <div class="container">
+        <h2>セリスナ教</h2>
+        <p>セリスナ教（Serisna）は、抽象的な感情の表現と自己の内面と向き合うために開発された新しい言語、セリスナ語を中心とする宗教である。現代社会におけるSNSの発達に伴う価値観の揺らぎや不条理な考えの正当化に対抗するために設立された。</p>
+        <h3>特徴</h3>
+        <p>セリスナ教は「抽象化」や「多解釈」といった概念を最重要視しているため、既存の伝統的な宗教と異なり、個人によって非常に自由な解釈が可能である。これは、聖書であるセリスナ書が極めて少ない語彙を持つ、抽象言語であるセリスナ語で書かれているためである。</p>
+        <h3>宗教の意義</h3>
+        <p>セリスナ教は、言語が持つ力とその抽象性に注目し、個人の内面と向き合うための新たな道を提示する。セリスナ語を通じて、自己表現を深め、宇宙の真理にアクセスすることができるとされている。これにより、内なる平和を追求し、抽象的な感情を効果的に表現することを目指している。</p>
+        <h3>教義</h3>
+        <p>セリスナ教の教義は以下の通りである：</p>
+        <ol>
+            <li>悩みに対するヒントとして、宇宙の真理空間に内在するものを扱う。</li>
+            <li>宇宙の真理空間を扱うために、セリスナ語を使用する。</li>
+            <li>神、フークスマン、サミュエル、怪鳥といった多解釈的存在がいる。</li>
+        </ol>
+        <h3>歴史</h3>
+        <p>セリスナ教は、David Fooksmanによって創始された。彼は、現代社会における価値観の混乱とネガティブな感情の増幅を問題視し、その解決策としてセリスナ語を開発した。セリスナ語は、限定された数の語彙を使用し、感情を極めて抽象的に表現することで、不条理な理論の発生を防ぐことを目的としている。</p>
+        <h3>セリスナ語</h3>
+        <p>セリスナ語は、セリスナ教の教義や教えを伝えるための専用言語である。語彙は29語のみで構成されており、創始者である預言者David Fooksmanによって記述された。セリスナ語は2日間で習得可能であり、翻訳も含めて短期間で学ぶことができる。全ての布教活動はセリスナ語で行われるため、興味のある人だけが自ら進んで暗号を解読し、教義にアクセスできるよう工夫されている。</p>
+
+        <h2 id="vocabulary">セリスナ語の語彙</h2>
+        <table>
+            <caption>セリスナ語の語彙一覧</caption>
+            <thead>
+                <tr>
+                    <th>日本語</th>
+                    <th>セリスナ語</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>主観</td>
+                    <td>sai</td>
+                </tr>
+                <tr>
+                    <td>客観</td>
+                    <td>zai</td>
+                </tr>
+                <tr>
+                    <td>コピー</td>
+                    <td>miri</td>
+                </tr>
+                <tr>
+                    <td>目的</td>
+                    <td>vora</td>
+                </tr>
+                <tr>
+                    <td>完成された構造体</td>
+                    <td>taira</td>
+                </tr>
+                <tr>
+                    <td>素材</td>
+                    <td>fira</td>
+                </tr>
+                <tr>
+                    <td>造られている構造体</td>
+                    <td>dira</td>
+                </tr>
+                <tr>
+                    <td>コロシアム</td>
+                    <td>koris</td>
+                </tr>
+                <tr>
+                    <td>剣闘士</td>
+                    <td>kenza</td>
+                </tr>
+                <tr>
+                    <td>措定</td>
+                    <td>tiva</td>
+                </tr>
+                <tr>
+                    <td>ノリ</td>
+                    <td>kazu</td>
+                </tr>
+                <tr>
+                    <td>狂い</td>
+                    <td>kura</td>
+                </tr>
+                <tr>
+                    <td>する</td>
+                    <td>suri</td>
+                </tr>
+                <tr>
+                    <td>される</td>
+                    <td>saru</td>
+                </tr>
+                <tr>
+                    <td>受ける</td>
+                    <td>keta</td>
+                </tr>
+                <tr>
+                    <td>与える</td>
+                    <td>ateu</td>
+                </tr>
+                <tr>
+                    <td>含む</td>
+                    <td>fuka</td>
+                </tr>
+                <tr>
+                    <td>脱する</td>
+                    <td>datsu</td>
+                </tr>
+                <tr>
+                    <td>人間</td>
+                    <td>ninga</td>
+                </tr>
+                <tr>
+                    <td>神</td>
+                    <td>kami</td>
+                </tr>
+                <tr>
+                    <td>誕生</td>
+                    <td>tansho</td>
+                </tr>
+                <tr>
+                    <td>サミュエル</td>
+                    <td>samuel</td>
+                </tr>
+                <tr>
+                    <td>フークスマン</td>
+                    <td>fuxman</td>
+                </tr>
+                <tr>
+                    <td>怪鳥</td>
+                    <td>kaiyo</td>
+                </tr>
+                <tr>
+                    <td>である</td>
+                    <td>sefu</td>
+                </tr>
+                <tr>
+                    <td>の</td>
+                    <td>nu</td>
+                </tr>
+                <tr>
+                    <td>真理</td>
+                    <td>shira</td>
+                </tr>
+                <tr>
+                    <td>宇宙</td>
+                    <td>ushu</td>
+                </tr>
+                <tr>
+                    <td>空間</td>
+                    <td>kū</td>
+                </tr>
+                <tr>
+                    <td>非 (not)</td>
+                    <td>ne</td>
+                </tr>
+                <tr>
+                    <td>無 (without)</td>
+                    <td>mu</td>
+                </tr>
+                <tr>
+                    <td>欠如 (lack)</td>
+                    <td>ka</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        &copy; 2024 Serisna Wiki
+    </footer>
+
+    <script>
+        // モーダルウィンドウの表示と非表示の制御
+        var modal = document.getElementById("myModal");
+        var banner = document.getElementById("banner");
+        var span = document.getElementById("close");
+
+        banner.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
